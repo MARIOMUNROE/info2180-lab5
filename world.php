@@ -33,17 +33,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     <font color = "red">
     <h2 id="error">NO RESULTS - Try entering a valid country to lookup cities</h2>
   <?php else: ?>
-  <table>
+<table>
   <tr>
     <th>Name</th>
-    <th>District</th>
-    <th>Population</th>
+    <th>City Population</th>
+    <th>City District</th>
   </tr>
 <?php foreach ($results as $row): ?>
   <tr>
     <td><?= $row['name']; ?></td>
+	<td><?= $row['population']; ?></td>
     <td><?= $row['district']; ?></td>
-    <td><?= $row['population']; ?></td>
   </tr>
 <?php endforeach; ?>
 </table>
@@ -51,9 +51,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 <?php else: ?>
 <table>
   <tr>
-    <th>Name</th>
+    <th>Country Name</th>
     <th>Continent</th>
-    <th>Independence</th>
+    <th> Year of Independence</th>
     <th>Head of State</th>
   </tr>
 <?php foreach ($results as $row): ?>
